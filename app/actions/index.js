@@ -16,7 +16,6 @@ export function initialFetch(date) {
     jsonp(url)
         .then(
             (response) => {
-                console.log("response", response)
                 dispatch({ type: FETCH_SUCCESS, response, date })
             },
         ).catch(
