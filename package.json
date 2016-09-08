@@ -45,8 +45,6 @@
   },
   "dependencies": {
     "autoprefixer": "^6.4.0",
-    "axios": "^0.14.0",
-    "jsonp": "^0.2.0",
     "jsonp-es6": "^1.0.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",

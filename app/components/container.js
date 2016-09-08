@@ -17,8 +17,31 @@ export default class Container extends Component {
         return days;
     }
 
+    /**
+        sortWeatherObj() takes the weatherObj from the store and sorts it
+        Because the calls to the API happen async, the data that is returned isn't necessarily in the correct order
+        This function takes the object, pushes it into an array, and then sorts the array by UNIX timestamp
+    **/
+    sortWeatherObj(weatherObj) {
+        let weatherArr = [];
+        let prop;
+        for (prop in weatherObj) {
+            if (weatherObj.hasOwnProperty(prop)) {
+                weatherArr.push({
+                    'key': weatherObj[prop].time,
+                    'value': weatherObj[prop]
+                });
+            }
+        }
+        weatherArr.sort(function(a, b) {
+            return a.key - b.key;
+        });
+        return weatherArr;
+    }
+
     render() {
         let weather = this.props.weather;
+        let sortedWeather = this.sortWeatherObj(weather);
         return (
             <div className="container">
                 <h1>HVAC Report for June 2016</h1>
@@ -28,12 +51,12 @@ export default class Container extends Component {
                     <div className="column">AC</div>
                 </div>
                 {
-                    Object.keys(weather).map((key, value) => {
-                        let date = weather[key].date;
-                        let heat = weather[key].heat ? "Yes" : "No";
-                        let ac = weather[key].ac ? 'Yes' : "No";
+                    sortedWeather.map((key) => {
+                        let date = key.value.date;
+                        let heat = key.value.heat ? "Yes" : "No";
+                        let ac = key.value.ac ? 'Yes' : "No";
                         return (
-                            <div key={key}>
+                            <div key={key.key} className="date-row-container">
                                 <DateRow date={date} heat={heat} ac={ac}/>
                             </div>
                         )

@@ -11,11 +11,12 @@ const LON = -122.5951
 const ROOT_URL = `https://api.forecast.io/forecast/${API_KEY}/${LAT},${LON}`
 
 export function initialFetch(date) {
-    const url = `${ROOT_URL},${date}T12:00:00-0400?exclude=[currently,minutely,hourly]`;
+    const url = `${ROOT_URL},${date}T12:00:00-0700?exclude=[currently,minutely,hourly]`;
     return dispatch =>
     jsonp(url)
         .then(
             (response) => {
+                console.log("response", response)
                 dispatch({ type: FETCH_SUCCESS, response, date })
             },
         ).catch(

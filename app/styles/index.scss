@@ -21,14 +21,15 @@ body {
         display: flex;
         flex-direction: column;
         padding: 25px;
+        .date-row-container {
+            &:nth-child(even) {
+                background-color: #ececec;
+            }
+        }
         .row {
             display: flex;
             flex-direction: row;
             height: 30px;
-
-            &:nth-child(even) {
-                background-color: #ececec;
-            }
             &.header, &.footer {
                 background-color: #333;
                 color: #ececec;
