@@ -14,13 +14,13 @@ export default function weatherReducer(state = initialState, action) {
             let ac = maxTemp > 75;
             let heat = minTemp < 62;
             return [...state, {
-                [action.date]: {
+                    date: action.date,
                     maxTemp: maxTemp,
                     minTemp: minTemp,
                     ac: ac,
                     heat: heat
                 }
-            }]
+            ]
         default:
             return state;
     }

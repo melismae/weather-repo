@@ -1,2 +1,2 @@
 export { default as weather } from './weatherReducer';
-// export { default as ui } from './uiReducer';
+export { default as ui } from './uiReducer';

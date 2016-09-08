@@ -1,4 +1,4 @@
-# cascade
+# cascade weather
 
 Repo for Cascade Energy challenge. Link is TBD, but for now, here's how to run.
 
@@ -19,5 +19,3 @@ You'll also need to build the CSS:
 `$ npm run build:css`
 
 The static files end up in the build directory.
-# weather
-# weather-repo
