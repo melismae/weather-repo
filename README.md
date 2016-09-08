@@ -8,7 +8,7 @@ First, install the dependencies:
 
 `$ npm install`
 
-For JavaScript development, use the webpack dev server... it has hot reloading of JS & CSS and you'll also see the Redux devtools if you have the Chrome extension.
+For JavaScript development, use the webpack dev server... it has hot reloading of JS & CSS and you'll also see the Redux devtools if you have the Chrome extension (this would be removed if it were in production).
 
 `$ npm run dev`
 
