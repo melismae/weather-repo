@@ -7,7 +7,6 @@ const initialState = {};
 
 export default function weatherReducer(state = initialState, action) {
     switch(action.type) {
-        case INITIAL_FETCH:
         case FETCH_SUCCESS:
             let maxTemp = action.response.daily.data[0].temperatureMax;
             let minTemp = action.response.daily.data[0].temperatureMin;
