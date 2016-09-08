@@ -20,7 +20,7 @@ class App extends Component {
     componentWillMount() {
         let date = '2016-06-';
         let newDate;
-        for (let i = 1; i < 4; i++) {
+        for (let i = 1; i < 31; i++) {
             newDate = `${date}${i}`;
             if (i < 10) {
                 newDate = `${date}0${i}`;
